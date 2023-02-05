@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/appBack"
+    app:layoutDescription="@xml/activity_main_scene">
+
+   <include
+       android:id="@+id/header"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       layout="@layout/layout_head"/>
+
+   <include
+       android:id="@+id/layout_search_bar"
+       app:layout_constraintTop_toBottomOf="@id/header"
+       app:layout_constraintLeft_toLeftOf="parent"
+       layout="@layout/layout_bar"
+       android:layout_width="match_parent"
+       android:layout_height="60dp"/>
+
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/list"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:overScrollMode="never"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/layout_search_bar" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
